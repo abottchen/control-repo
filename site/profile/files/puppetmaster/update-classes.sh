@@ -1,5 +1,4 @@
 #https://docs.puppetlabs.com/pe/latest/nc_update_classes.html#post-v1update-classes
-#testing
 
 CONFDIR=$(puppet master --configprint confdir)
 
