@@ -21,7 +21,7 @@ mod "puppetlabs/dsc", :latest
 # Further examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
 # update the tag to the most current release when implementing
 mod 'hiera',
-  :git => 'https://github.com/hunner/puppet-hiera',
+  :git => 'http://github.com/hunner/puppet-hiera',
   :tag => '1.3.1'
 
 mod 'gitlab',
