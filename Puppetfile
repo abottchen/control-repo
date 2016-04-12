@@ -1,4 +1,4 @@
 mod 'puppetlabs/vsphere' 
 
-mod 'helloworld',
+mod 'ourmodules',
   :git => "git@github.com:abottchen/dev"
