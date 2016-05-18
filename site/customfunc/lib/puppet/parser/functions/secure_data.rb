@@ -2,7 +2,8 @@ require 'net/http'
 require 'json'
 module Puppet::Parser::Functions
   newfunction(:secure_data, :arity => 2, :type => :rvalue) do |args|
-    dir = Dir.pwd
+#    dir = Dir.pwd
+    dir = "/etc/puppetlabs/code/environments/production/site/customfunc"
     path = dir + '/files/secure.json'
     file = File.read(path)
     tokens = JSON.parse(file)
