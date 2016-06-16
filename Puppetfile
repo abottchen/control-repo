@@ -1,1 +1,1 @@
-mod 'inifile'
+mod 'puppletlabs/inifile'
