@@ -13,7 +13,17 @@
 
 # Disable filebucket by default for all File resources:
 #http://docs.puppetlabs.com/pe/latest/release_notes.html#filebucket-resource-no-longer-created-by-default
-File { backup => false }
+#File { backup => false }
+if $::certname == 'pe-201611-master-lei.puppetdebug.vlan' {
+  filebucket { 'main': }
+} elsif $::certname == 'pe-201611-cm-lei.puppetdebug.vlan' {
+  filebucket { 'main': 
+    path   => false,
+    server => 'pe-201611-master-lei.puppetdebug.vlan',
+  }
+}
+
+File { backup => 'main' }
 
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
