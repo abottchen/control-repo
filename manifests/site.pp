@@ -14,10 +14,10 @@
 # Disable filebucket by default for all File resources:
 #http://docs.puppetlabs.com/pe/latest/release_notes.html#filebucket-resource-no-longer-created-by-default
 #File { backup => false }
-if $::certname == 'pe-201611-master-lei.puppetdebug.vlan' {
+if $trusted['certname'] == 'pe-201611-master-lei.puppetdebug.vlan' {
   notify {'setting up master filebucket': }
   filebucket { 'main': }
-} elsif $::certname == 'pe-201611-cm-lei.puppetdebug.vlan' {
+} elsif $trusted['certname'] == 'pe-201611-cm-lei.puppetdebug.vlan' {
   notify {'setting up compile master filebucket': }
   filebucket { 'main': 
     path   => false,
