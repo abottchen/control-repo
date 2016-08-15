@@ -1,6 +1,7 @@
 class zd20557 {
-  file { '/tmp/file':
-    content => "$::timestamp",
-    ensure => present,
-  }
+  #  file { '/tmp/file':
+  #    content => "$::timestamp",
+  #    ensure => present,
+  #  }
+  notify { "$::timestamp":}
 }
