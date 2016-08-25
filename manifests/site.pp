@@ -23,6 +23,6 @@ node 'pe-201611-master-lei.puppetdebug.vlan' {
 node default {
   filebucket { 'main':
     path   => false,
-    #    server => "pe-201611-master-lei.puppetdebug.vlan",
+    server => "pe-201611-master-lei.puppetdebug.vlan",
   }
 }
