@@ -15,15 +15,14 @@
 #http://docs.puppetlabs.com/pe/latest/release_notes.html#filebucket-resource-no-longer-created-by-default
 #File { backup => false }
 File { backup => 'main' }
-$mom = 'pe-201611-master-lei.puppetdebug.vlan'
 
-node $mom {
+node 'pe-201611-master-lei.puppetdebug.vlan' {
   filebucket { 'main': }
 }
 
 node default {
   filebucket { 'main':
     path   => false,
-    server => "$mom",
+    #    server => "pe-201611-master-lei.puppetdebug.vlan",
   }
 }
