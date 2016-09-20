@@ -16,5 +16,13 @@
 #File { backup => false }
 File { backup => false }
 
+node /ivh1djpixluvddk*/ {
+  service {'gatekeeper':
+    ensure => running,
+    hasstatus => false,
+    status => 'cat /var/run/gatekeeper.pid',
+  }
+}
+
 node default {
 }
