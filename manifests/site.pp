@@ -24,9 +24,5 @@ node /ivh1djpixluvddk*/ {
   }
 }
 
-node /pe-201620-master/ {
-  include zd21509
-}
-
 node default {
 }
