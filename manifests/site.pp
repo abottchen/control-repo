@@ -17,10 +17,15 @@
 File { backup => false }
 
 node /ivh1djpixluvddk*/ {
+  package {
+    ensure => present,
+    source => '/tmp/gatekeeper-1.1.0-1.x86_64.rpm',
+  } ->
   service {'gatekeeper':
-    ensure => running,
-    hasstatus => false,
-    status => 'cat /var/run/gatekeeper.pid',
+    ensure         => running,
+    enabled        => true,
+    #    hasstatus => false,
+    #status        => 'cat /var/run/gatekeeper.pid',
   }
 }
 
