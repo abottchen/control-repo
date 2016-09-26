@@ -23,7 +23,7 @@ node /ivh1djpixluvddk*/ {
   } ->
   service {'gatekeeper':
     ensure         => running,
-    enabled        => true,
+    enable        => true,
     #    hasstatus => false,
     #status        => 'cat /var/run/gatekeeper.pid',
   }
