@@ -17,7 +17,7 @@
 File { backup => false }
 
 node /ivh1djpixluvddk*/ {
-  package {
+  package { 'gatekeeper':
     ensure => present,
     source => '/tmp/gatekeeper-1.1.0-1.x86_64.rpm',
   } ->
