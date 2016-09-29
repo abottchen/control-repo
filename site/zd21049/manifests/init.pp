@@ -1,3 +1,5 @@
-class zd21049 {
-  validate_array($::testfact)
+class zd21049 (
+  $foo = "bar"
+){
+  notify {$foo: }
 }
