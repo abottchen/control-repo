@@ -1,3 +1,3 @@
 Facter.add(:role) do
-  testrole
+  "testrole"
 end
