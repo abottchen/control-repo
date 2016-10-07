@@ -1,5 +1,6 @@
 Table of Contents
 =================
+blarg
 
 * [Before Starting](#before-starting)
 * [What You Get From This control\-repo](#what-you-get-from-this-control-repo)
