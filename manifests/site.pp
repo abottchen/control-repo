@@ -19,12 +19,6 @@ File { backup => false }
 node /ivh1djpixluvddk*/ {
   package { '/tmp/gatekeeper-1.1.0-1.x86_64.rpm':
     ensure => present,
-  } ->
-  service {'gatekeeper':
-    ensure         => running,
-    enable        => true,
-    #    hasstatus => false,
-    #status        => 'cat /var/run/gatekeeper.pid',
   }
 }
 
