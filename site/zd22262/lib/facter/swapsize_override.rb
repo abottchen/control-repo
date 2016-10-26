@@ -1,5 +1,6 @@
 Facter.add(:swapsize) do
   confine :osfamily => "AIX"
+  has_weight = 1000
   setcode do
     value = 0
     output = Facter::Core::Execution.exec('swap -l 2>/dev/null')
