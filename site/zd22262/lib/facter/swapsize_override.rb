@@ -6,6 +6,7 @@ Facter.add(:swapsize) do
     output.each_line do |line|
       if line =~ /^\/\S+\s.*\s+(\S+)MB\s+(\S+)MB/ 
         value += $1.to_i
+      end
     end
     value
   end
