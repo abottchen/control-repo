@@ -1,5 +1,5 @@
 mod 'puppetlabs/inifile'
 mod 'puppetlabs/stdlib'
 mod 'dhgwilliam/bucket_face'
-mod 'sw-repo', :git => 'https://github.com/abottchen/sw_repo.git'
-mod 'env-repo', :git => 'https://github.com/abottchen/env_repo.git'
+mod 'swrepo', :git => 'https://github.com/abottchen/sw_repo.git'
+mod 'envrepo', :git => 'https://github.com/abottchen/env_repo.git'
