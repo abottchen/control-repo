@@ -1,11 +1,17 @@
 class zd22822 {
   transition { 'testing':
-    resource   => Notify['test1'],
-    attributes => { message        => 'changed test1' },
-    prior_to   => Notify['test2']
+    resource   => Service['ntpd'],
+    attributes => { ensure => stopped },
+    prior_to   => File['/tmp/testfile']
   }
 
-  notify {'test1': before => Notify['test2']}
+  file {'/tmp/testfile':
+    ensure  => file,
+    content => 'testing',
+    notify  => Service['ntpd'],
+  }
 
-  notify {'test2': }
+  service { 'ntpd':
+    ensure => running,
+  }
 }
