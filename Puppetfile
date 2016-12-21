@@ -1,3 +1,5 @@
+moduledir 'templatesets/test/test3'
+
 mod 'puppetlabs/inifile'
 mod 'puppetlabs/stdlib'
 mod 'dhgwilliam/bucket_face'
