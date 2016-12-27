@@ -1,17 +1,17 @@
 class zd22822 {
   transition { 'testing':
-    resource   => Service['ntpd'],
-    attributes => { ensure => stopped },
+    resource   => Package['mutt'],
+    attributes => { ensure => absent },
     prior_to   => File['/tmp/testfile']
   }
 
   file {'/tmp/testfile':
     ensure  => file,
     content => 'testing',
-    notify  => Service['ntpd'],
+    notify  => Package['mutt'],
   }
 
-  service { 'ntpd':
-    ensure => running,
+  package { 'mutt':
+    ensure => installed,
   }
 }
