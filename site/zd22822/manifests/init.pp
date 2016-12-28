@@ -8,7 +8,7 @@ class zd22822 {
   file {'/tmp/testfile':
     ensure  => file,
     content => 'testing',
-    notify  => Package['mutt'],
+    before  => Package['mutt'],
   }
 
   package { 'mutt':
