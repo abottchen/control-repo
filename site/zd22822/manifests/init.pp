@@ -1,5 +1,5 @@
 class zd22822 {
-  $pkg='mutt'
+  $pkg='zsh'
 
   transition { 'testing':
     resource   => Package[$pkg],
