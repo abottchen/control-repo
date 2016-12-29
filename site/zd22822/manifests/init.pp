@@ -1,19 +1,15 @@
 class zd22822 {
-  $package='mutt'
+  $pkg='mutt'
+
   transition { 'testing':
-    resource   => Package[$package],
+    resource   => Package[$pkg],
     attributes => { ensure => absent },
-    prior_to   => Notify['removing package']
+    prior_to   => Notify["removing package ${pkg}"]
   }
 
-  notify {"removing package ${package}": }
-  #  file {'/tmp/testfile':
-  #    ensure  => file,
-  #    content => 'testing',
-  #    before  => Package['mutt'],
-  #  }
+  notify {"removing package ${pkg}": }
 
-  package { $package:
+  package { $pkg:
     ensure => installed,
   }
 }
