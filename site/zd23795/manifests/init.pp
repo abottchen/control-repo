@@ -1,4 +1,4 @@
 class zd23795 {
-  $path = lookup("myfact") 
-  notify {$path: }
+  $var = lookup("myvar") 
+  notify {$var: }
 }
