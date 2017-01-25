@@ -1,0 +1,7 @@
+---
+version: 4
+datadir: data
+hierarchy:
+  - name: "Nodes"
+    backend: yaml
+    path: "nodes/%{facts.virtual}"
