@@ -5,3 +5,6 @@ hierarchy:
   - name: "Nodes"
     backend: yaml
     path: "nodes/%{facts.myfact}"
+  - name: "Nodes Default"
+    backend: yaml
+    path: "nodes/none"
