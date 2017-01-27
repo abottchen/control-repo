@@ -4,6 +4,4 @@ datadir: /tmp
 hierarchy:
   - name: "Nodes"
     backend: yaml
-    paths: 
-      - "nodes/%{facts.myfact}"
-      - "nodes/none"
+    path: "nodes/%{facts.myfact ||= 'none'}"
