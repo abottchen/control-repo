@@ -5,5 +5,9 @@ class puppet_splay {
     section => 'agent',
     setting => 'splay',
     value   => 'true',
+  } ~> 
+
+  service { 'puppet':
+    ensure => running,
   }
 }
