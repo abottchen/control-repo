@@ -1,0 +1,13 @@
+{ 
+  "name": "zd23892", 
+    "version": "0.1.0", 
+    "author": "adam@puppet.com", 
+    "summary": "Testing modular Hiera", 
+    "license": "Apache-2.0", 
+    "source": "github.com", 
+    "project_page": null, 
+    "issues_url": null, 
+    "dependencies": [ 
+    ], 
+    "data_provider": "hiera" 
+}
