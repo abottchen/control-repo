@@ -1,5 +1,4 @@
-class zd23892 (
-  $country_codes,
-) {
-  notify{"$country_codes":} 
+class zd23892 {
+  $hiera_test = lookup('country_codes')
+  notify{"$hiera_test":} 
 }
