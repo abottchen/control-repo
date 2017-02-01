@@ -3,7 +3,7 @@ version: 4
 datadir: /tmp
 hierarchy:
   - name: "Nodes"
-  backend: yaml
-  paths:
-    - "nodes/%{facts.myfact}"
-    - "nodes/none"
+    backend: yaml
+    paths:
+      - "nodes/%{facts.myfact}"
+      - "nodes/none"
