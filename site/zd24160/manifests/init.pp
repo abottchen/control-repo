@@ -1,5 +1,5 @@
 define print() {
-  notice("The value is: '${name}'")
+  notify {"The value is: '${name}'": }
 }
 
 class zd24160 {
