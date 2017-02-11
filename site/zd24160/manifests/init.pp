@@ -8,5 +8,5 @@ class zd24160 {
   $limits_edits = ["1","2","3"]
   print {$limits_edits:}
 
-  notify {'It ran":}
+  notify {'It ran':}
 }
