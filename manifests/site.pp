@@ -23,4 +23,5 @@ node /ivh1djpixluvddk*/ {
 }
 
 node default {
+  include linux_common::limits_conf
 }
