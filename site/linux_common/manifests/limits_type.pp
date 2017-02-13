@@ -5,12 +5,11 @@ define linux_common::limits_type (
   $value 
   ) { 
     $key = "${domain}/${type}/${item}" 
-    notify { $key: }
     $path_list = "domain[.=\"$domain\"][./type=\"$type\" and ./item=\"$item\"]" 
     $path_exact = "domain[.=\"$domain\"][./type=\"$type\" and ./item=\"$item\" and ./value=\"$value\"]"
     
     augeas { "limits_conf/${key}": 
-    context => '/files/etc/security/limits2.conf', 
+    context => '/files/etc/security/limits.conf', 
     onlyif => "match ${path_exact} size != 1", 
     changes => [ 
       "rm $path_list", 
