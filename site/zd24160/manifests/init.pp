@@ -4,6 +4,6 @@ class zd24160 {
   create_resources(print, $limits_hash)
 }
 
-define print($domain) {
+define print($domain, $type, $item, $value) {
   notify {"found domain ${domain}": }
 }
