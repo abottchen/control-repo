@@ -1,9 +1,9 @@
-define print() {
-  notify {"The value is: '${name}'": }
+class zd24160 {
+  $limits_hash = hiera_hash('linux_common::limits_edits')
+
+  create_resources(print, $limits_hash)
 }
 
-class zd24160 {
-  $limits_edits = hiera_hash('linux_common::limits_edits')
-
-  #  print {$limits_edits:}
+define print($domain) {
+  notify("found domain ${domain}":)
 }
