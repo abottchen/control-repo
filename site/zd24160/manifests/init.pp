@@ -5,5 +5,5 @@ class zd24160 {
 }
 
 define print($domain, $type, $item, $value) {
-  notify {"found domain ${domain}": }
+  notify {"found domain ${name} - ${domain}": }
 }
