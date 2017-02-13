@@ -16,12 +16,6 @@
 #File { backup => false }
 File { backup => false }
 
-node /ivh1djpixluvddk*/ {
-  package { '/tmp/gatekeeper-1.1.0-1.x86_64.rpm':
-    ensure => present,
-  }
-}
-
 node default {
-  include linux_common::limits_conf
+  #  include linux_common::limits_conf
 }
