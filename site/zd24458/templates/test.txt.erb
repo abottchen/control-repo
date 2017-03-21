@@ -1,3 +1,6 @@
-<%  @clusters.each_pair do |k,v| -%>
-  <%= k %> = <%= v %>
+<%  @clusters.each do |c| -%>
+  <%= c %> *
+  <%  c.each_pair do |k,v| -%>
+    <%= k %> = <%= v %>
+  <% end -%>    
 <% end -%>    
