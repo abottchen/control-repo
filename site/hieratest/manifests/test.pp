@@ -6,6 +6,6 @@ class hieratest::test (
   #  $test = lookup("hieratest::test::myarr")
   #notify {"The lookup hash is: ${test}":}
 
-  Array $test3 = lookup("hieratest::test::myarr", Array[String], 'deep')
+  $test3 = lookup("hieratest::test::myarr", Array[String], 'unique')
   notify {"The deep lookup hash is: ${test3}":}
 }
