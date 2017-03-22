@@ -6,6 +6,6 @@ class hieratest::test (
   $test = lookup("hieratest::test::myarr")
   notify {"The lookup hash is: ${test}":}
 
-  $test2 = lookup("hieratest::test::myarr", {'merge' =>  'deep'})
-  notify {"The deep lookup hash is: ${test2}":}
+  $test3 = lookup("hieratest::test::myarr", {'merge' =>  'deep'})
+  notify {"The deep lookup hash is: ${test3}":}
 }
