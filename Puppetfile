@@ -3,6 +3,5 @@ mod 'puppetlabs/transition'
 mod 'puppetlabs/inifile'
 mod 'puppetlabs/puppet_agent'
 mod 'puppetlabs/apt'
-mod 'mysql', :git => 'git@github.com:abottchen/puppetlabs-mysql.git'
-mod 'common', :git => 'https://github.com/abottchen/sw_repo.git', :install_path => 'modules/hieradata'
-mod 'envrepo', :git => 'https://github.com/abottchen/env_repo.git'
+mod 'pe_metric_curl_cron_jobs',
+  :git => 'https://github.com/abottchen/pe_metric_curl_cron_jobs.git'
