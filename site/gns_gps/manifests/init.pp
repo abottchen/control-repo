@@ -11,8 +11,8 @@ class gns_gps {
   }
 
   schedule {'maint window':
-    range => '3 - 5',
-    #    period => 'daily',
-    #    repeat => 1,
+    range => '13 - 16',
+    period => daily,
+    repeat => 1,
   }
 }
