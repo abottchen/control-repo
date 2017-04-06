@@ -1,0 +1,8 @@
+<%  @nodes.each do |k,v| -%>
+  <%= k %> is the node name
+  Key Pairs in that hash
+  ======================
+  <%  v.each_pair do |c,d| -%>
+    <%= c %> = <%= d %>
+  <% end -%>    
+<% end -%>    
