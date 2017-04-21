@@ -2,11 +2,13 @@
 version: 4
 datadir: data
 hierarchy:
-
-  - name: "check_certificate_ws"
+  - name: "fqdn"
     backend: yaml
-    path: "check_certificate_ws/%{::check_certificate_ws}"
+    path: "fqdn/%{::fqdn}"
+
+  - name: "scomserv_apply"
+    backend: yaml
+    path: "scomserv_apply/%{::scomserv_apply}"
 
   - name: "common"
     backend: yaml
-
