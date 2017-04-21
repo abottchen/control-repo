@@ -2,14 +2,11 @@
 version: 4
 datadir: data
 hierarchy:
-  - name: "linux/inputs/serverlist"
+
+  - name: "check_certificate_ws"
+    backend: yaml
+    path: "check_certificate_ws/%{::check_certificate_ws}"
+
+  - name: "common"
     backend: yaml
 
-  - name: "linux/inputs/applist"
-    backend: yaml
-
-  - name: "windows/inputs/serverlist"
-    backend: yaml
-
-  - name: "windows/inputs/applist"
-    backend: yaml
