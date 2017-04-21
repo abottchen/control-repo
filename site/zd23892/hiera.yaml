@@ -1,5 +1,18 @@
 ---
+version: 4
+datadir: data
+hierarchy:
+  - name: "node"
+    backend: yaml
+    path: "node/%{facts.clientcert}"
 
-:hierarchy:
- - kernel/%{::kernel}
- - common
+  - name: "sys_profile"
+    backend: yaml
+    path: "sys_profile/%{facts.sys_profile}"
+
+  - name: "environment"
+    backend: yaml
+    path: "environment/%{environment}"
+
+  - name: "common"
+    backend: yaml
