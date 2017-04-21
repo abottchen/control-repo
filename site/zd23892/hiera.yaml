@@ -1,14 +1,5 @@
 ---
-version: 4
-datadir: data
-hierarchy:
-  - name: "fqdn"
-    backend: yaml
-    path: "fqdn/%{::fqdn}"
 
-  - name: "dus_client_apply"
-    backend: yaml
-    path: "dus_client_apply/%{::dus_client_apply}"
-
-  - name: "common"
-    backend: yaml
+:hierarchy:
+ - kernel/%{::kernel}
+ - common
