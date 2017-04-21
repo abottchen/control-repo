@@ -1,8 +1,1 @@
 --- 
-version: 5 
-datadir: data 
-hierarchy: 
-  - name: "Common" 
-
-  - name: "application_environment/%{bns_app_environment_name}" 
-    backend: yaml
