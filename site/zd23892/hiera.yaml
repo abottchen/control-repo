@@ -2,17 +2,14 @@
 version: 4
 datadir: data
 hierarchy:
-  - name: "node"
+  - name: "linux/inputs/serverlist"
     backend: yaml
-    path: "node/%{facts.clientcert}"
 
-  - name: "sys_profile"
+  - name: "linux/inputs/applist"
     backend: yaml
-    path: "sys_profile/%{facts.sys_profile}"
 
-  - name: "environment"
+  - name: "windows/inputs/serverlist"
     backend: yaml
-    path: "environment/%{environment}"
 
-  - name: "common"
+  - name: "windows/inputs/applist"
     backend: yaml
