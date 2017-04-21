@@ -1,8 +1,7 @@
 --- 
 version: 5
-datadir: data 
+defaults:
+  datadir: data
 hierarchy: 
-  - name: "blarg"
-
-  - name: "application_environment/%{bns_app_environment_name}" 
-    backend: yaml
+  - name: Common
+    path: common.yaml
