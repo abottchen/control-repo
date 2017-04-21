@@ -1,6 +1,22 @@
 --- 
-version: 5
-
+version: 4
+datadir: data
 hierarchy:
-  - name: "Per-node data"                   # Human-readable name.
-    path: "nodes/%{trusted.certname}.yaml"
+  - name: "activation_keys_override"
+    backend: yaml
+    path: "activation_keys/override/%{sat6_activation_key_override}"
+
+  - name: "activation_keys"
+    backend: yaml
+    path: "activation_keys/%{environment}/%{buildtype}/%{operatingsystem}-%{operatingsystemrelease}"
+
+  - name: "sys_profile"
+    backend: yaml
+    path: "sys_profile/%{sys_profile}"
+
+  - name: "environment"
+    backend: yaml
+    path: "environment/%{environment}"
+
+  - name: "common"
+    backend: yaml
