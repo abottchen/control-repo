@@ -1,7 +1,1 @@
 --- 
-version: 5
-defaults:
-  datadir: data
-hierarchy: 
-  - name: Common
-    path: common.yaml
