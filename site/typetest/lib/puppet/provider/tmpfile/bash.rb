@@ -2,7 +2,7 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
   def create()
     Puppet.debug("README: creating /tmp/#{@resource[:name]} with contents '#{@resource[:insides]}'")
     File.open("/tmp/#{@resource[:name]}") do |f|
-      f.write(@resource[:insides]
+      f.write(@resource[:insides])
     end
     @property_hash[:ensure] = :present
   end
