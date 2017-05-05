@@ -1,7 +1,7 @@
 Puppet::Type.type(:tmpfile).provide(:bash) do
   def create()
-    Puppet.debug("README: touch /tmp/#{@resource[:name]}")
-    `touch /tmp/#{@resource[:name]}`
+    Puppet.debug("README: echo #{@resource[:insides]} > /tmp/#{@resource[:name]}")
+    `echo #{@resource[:insides]} > /tmp/#{@resource[:name]}`
     @property_hash[:ensure] = :present
   end
 
