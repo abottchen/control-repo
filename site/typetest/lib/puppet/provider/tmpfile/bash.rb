@@ -43,7 +43,7 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
 #    @property_hash[:insides]
 #  end
 
-  my_resource_methods()
+  mk_resource_methods()
 
   # Setter
   def insides=(value)
