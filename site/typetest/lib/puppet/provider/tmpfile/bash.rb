@@ -19,11 +19,12 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
   end
 
   def self.instances
-    things = `ls /tmp 2> /dev/null`.split("\n")
+    things = `for i in $(find /tmp/ -maxdepth 1 -type f -printf "%f\n"); do echo "$i,\"$(cat /tmp/$i)\""; done 2> /dev/null`.split("\n")
     things.collect do |thing|
       myhash = {}
       myhash[:ensure] = :present
-      myhash[:name] = thing
+      myhash[:name] = `echo #{thing} | cut -d ',' -f1 | tr -d '\n'`
+      myhash[:insides] = `echo #{thing} | cut -d ',' -f2 | tr -d '\n'`
       new(myhash)
     end
   end
@@ -35,5 +36,15 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
         resources[thing].provider = provider
       end
     end
+  end
+
+  # Getter
+  def insides
+    @property_hash[:insides]
+  end
+
+  # Setter
+  def insides=(value)
+    @property_hash[:insides] = value
   end
 end
