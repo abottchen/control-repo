@@ -19,7 +19,7 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
   end
 
   def self.instances
-    things = `for i in $(find /tmp/ -maxdepth 1 -type f -printf "%f\n"); do echo "$i,\"$(cat /tmp/$i)\""; done 2> /dev/null`.split("\n")
+    things = `for i in $(find /tmp/ -maxdepth 1 -type f -printf "%f\n"); do echo "$i,\"$(head -1 /tmp/$i)\""; done 2> /dev/null`.split("\n")
     things.collect do |thing|
       myhash = {}
       myhash[:ensure] = :present
