@@ -15,7 +15,7 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
 #    Puppet.debug("README: ls /tmp/#{@resource[:name]}")
 #    `ls /tmp/#{@resource[:name]} 2> /dev/null`
 #    return $?.exitstatus == 0 ? true && Puppet.debug("README: Exists") : Puppet.debug("README: Doesn't exist") && false
-    return @property_hash[:ensure] == :present ? Puppet.debug("README: Exists") && true : Puppet.debug("README: Doesn't Exist") && false
+    return @property_hash[:ensure] == :present
   end
 
   def self.instances
