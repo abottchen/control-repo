@@ -38,13 +38,17 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
     end
   end
 
-  # Getter
-  def insides
-    @property_hash[:insides]
-  end
+  # Getter (handled with mk_resource_methods
+#  def insides
+#    @property_hash[:insides]
+#  end
+
+  my_resource_methods()
 
   # Setter
   def insides=(value)
+    Puppet.debug("README: setting insides to '#{value}'")
+    `echo #{value} > /tmp/#{resource[:name]}`
     @property_hash[:insides] = value
   end
 end
