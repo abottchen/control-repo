@@ -18,12 +18,15 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
   end
 
   def self.instances
-    things = `for i in $(find /tmp/ -maxdepth 1 -type f -printf "%f\n"); do echo "$i,\"$(head -1 /tmp/$i)\""; done 2> /dev/null`.split("\n")
+    things = Dir.entries("/tmp")
+    things.delete_if do |thing|
+      File.ftype("/tmp/#{thing}") != "file"
+    end
     things.collect do |thing|
       myhash = {}
       myhash[:ensure] = :present
-      myhash[:name] = `echo #{thing} | cut -d ',' -f1 | tr -d '\n'`
-      myhash[:insides] = `echo #{thing} | cut -d ',' -f2 | tr -d '\n'`
+      myhash[:name] = thing
+      myhash[:insides] = File.read("/tmp/#{thing}")
       new(myhash)
     end
   end
