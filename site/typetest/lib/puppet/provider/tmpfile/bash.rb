@@ -50,7 +50,9 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
   # Setter
   def insides=(value)
     Puppet.debug("README: setting insides to '#{value}'")
-    `echo #{value} > /tmp/#{resource[:name]}`
+    File.open("/tmp/#{@resource[:name]}","w") do |f|
+      f.write(@resource[:insides])
+    end
     @property_hash[:insides] = value
   end
 end
