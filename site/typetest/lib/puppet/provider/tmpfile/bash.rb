@@ -9,7 +9,7 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
 
   def destroy()
     Puppet.debug("README: deleting /tmp/#{@resource[:name]}")
-    File.delete(@resource[:name])
+    File.delete("/tmp/#{@resource[:name]}")
     @property_hash[:ensure] = :absent
   end
 
