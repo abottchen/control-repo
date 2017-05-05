@@ -8,15 +8,12 @@ Puppet::Type.type(:tmpfile).provide(:bash) do
   end
 
   def destroy()
-    Puppet.debug("README: rm /tmp/#{@resource[:name]}")
-    `rm /tmp/#{@resource[:name]}`
+    Puppet.debug("README: deleting /tmp/#{@resource[:name]}")
+    File.delete(@resource[:name])
     @property_hash[:ensure] = :absent
   end
 
   def exists?()
-#    Puppet.debug("README: ls /tmp/#{@resource[:name]}")
-#    `ls /tmp/#{@resource[:name]} 2> /dev/null`
-#    return $?.exitstatus == 0 ? true && Puppet.debug("README: Exists") : Puppet.debug("README: Doesn't exist") && false
     return @property_hash[:ensure] == :present
   end
 
