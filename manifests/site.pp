@@ -16,7 +16,7 @@
 #File { backup => false }
 File { backup => false }
 
-node pe-201721-master.puppetlabs.com {
+node 'pe-201721-master.puppetlabs.com' {
   include pe_repo::platform::el_7_x86_64
 }
 
