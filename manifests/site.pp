@@ -16,7 +16,7 @@
 #File { backup => false }
 File { backup => false }
 
-node 'pe-201721-master.puppetlabs.vlan' {
+node 'pe-201721-master.puppetdebug.vlan' {
   include pe_repo::platform::el_7_x86_64
 }
 
