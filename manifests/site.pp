@@ -16,6 +16,10 @@
 #File { backup => false }
 File { backup => false }
 
+node pe-201721-master.puppetlabs.com {
+  include pe_repo::platform::el_7_x86_64
+}
+
 node default {
   #  include linux_common::limits_conf
 }
