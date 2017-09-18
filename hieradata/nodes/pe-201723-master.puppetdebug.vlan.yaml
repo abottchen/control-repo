@@ -1,0 +1,20 @@
+---
+foo: "baz"
+test:
+  val3: "three"
+  val4: "four"
+
+puppet_enterprise::profile::master::code_manager_auto_configure: true
+puppet_enterprise::master::code_manager::git_settings:
+  repositories:
+    - remote: "git@github.com:abottchen/control-repo.git"
+      private-key: "/etc/puppetlabs/puppetserver/ssh/id-control-repo-1.rsa"
+    - remote: "git@github.com:abottchen/control-repo-test.git"
+      private-key: "/etc/puppetlabs/puppetserver/ssh/id-control-repo-2.rsa"
+puppet_enterprise::master::code_manager::sources:
+    repo1:
+      remote: "git@github.com:abottchen/control-repo.git"
+      prefix: false
+    repo2:
+      remote: "git@github.com:abottchen/control-repo-test.git"
+      prefix: false
