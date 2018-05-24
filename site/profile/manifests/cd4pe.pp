@@ -40,7 +40,7 @@ class profile::cd4pe {
   docker::run { 'cd4pe-artifactory':
     image   => 'docker.bintray.io/jfrog/artifactory-oss:5.8.3',
     net     => 'cd4pe-network',
-    ports   => ['8081:8081'],
+    ports   => ['9081:8081'],
     volumes => ['data_s3:/var/opt/jfrog/artifactory'],
   }
   
@@ -58,7 +58,7 @@ class profile::cd4pe {
   docker::run { 'cd4pe':
     image   => 'pcr-internal.puppet.net/pipelines/pfi:latest',
     net     => 'cd4pe-network',
-    ports   => ['8080:8080', '8000:8000', '7000:7000'],
+    ports   => ['9080:8080', '8000:8000', '7000:7000'],
     volumes => [
       'cd4pe-mysql:/var/lib/mysql',
       '/etc/hosts:/etc/hosts',
