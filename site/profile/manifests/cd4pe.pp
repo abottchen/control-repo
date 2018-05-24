@@ -47,7 +47,7 @@ class profile::cd4pe {
   docker::run { 'cd4pe-gitlab':
     image   => 'gitlab/gitlab-ce:latest',
     net     => 'cd4pe-network',
-    ports   => ['80:80', '8022:22', '8043:443'],
+    ports   => ['9080:80', '8022:22', '8043:443'],
     volumes => [
       'gitlab_etc:/etc/gitlab',
       'gitlab_opt:/var/opt/gitlab',
