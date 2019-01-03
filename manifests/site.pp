@@ -14,10 +14,7 @@
 # Disable filebucket by default for all File resources:
 #http://docs.puppetlabs.com/pe/latest/release_notes.html#filebucket-resource-no-longer-created-by-default
 #File { backup => false }
-filebucket { 'main': 
-  server => 'pe-201901-master.puppetdebug.vlan', 
-  path => false, 
-}
+filebucket { 'main': }
 
 File { backup => 'main' }
 
