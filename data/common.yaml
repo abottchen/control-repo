@@ -1,2 +1,14 @@
 ---
 foo: baz
+
+puppet_enterprise::profile::master::code_manager_auto_configure: true
+puppet_enterprise::master::code_manager::sources:
+  baserepo:
+    remote: "git@github.com:abottchen/control-repo.git"
+
+puppet_enterprise::master::code_manager::git_settings:
+  repositories:
+    - remote: "git@github.com:abottchen/control-repo.git"
+      private_key: "/etc/puppetlabs/puppetserver/ssh/github.rsa"
+    - remote: "git@gitlab:root/test-ntp.git"
+      private_key: "/etc/puppetlabs/puppetserver/ssh/gitlab.rsa"
