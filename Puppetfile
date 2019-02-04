@@ -4,3 +4,4 @@ mod 'puppetlabs/apt'
 mod 'puppetlabs/translate', '1.0.0'
 mod 'ntp',
   :git => "git@gitlab:root/test-ntp.git"
+mod 'camptocamp/openssl'
