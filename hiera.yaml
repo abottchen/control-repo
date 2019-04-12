@@ -12,5 +12,6 @@ hierarchy:
     path: "nodes/%{::trusted.certname}.yaml"
   - name: "Other YAML hierarchy levels"
     paths:
+      - "someotherfile2.yaml"
       - "common.yaml"
 
